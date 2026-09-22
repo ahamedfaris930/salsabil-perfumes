@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salsabil Perfumes — Oud, Attar &amp; Bakhoor from Arabia</title>
+<meta name="description" content="Salsabil Perfumes — oud oils, attars and bakhoor made by hand, named for the spring of Paradise.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#141210;
+    --ink-2:#1c1815;
+    --ivory:#EFE7DA;
+    --ivory-dim:#c9bfad;
+    --gold:#B4874B;
+    --gold-light:#D9BD8C;
+    --oxblood:#5B1F24;
+    --sand:#8d8067;
+    --rule: rgba(217,189,140,0.22);
+    --maxw: 1120px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ink);
+    color:var(--ivory);
+    font-family:'Jost', sans-serif;
+    font-weight:300;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Fraunces', serif;
+    font-weight:400;
+    line-height:1.1;
+    color:var(--ivory);
+  }
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 32px;}
+  .rule{border:none; border-top:1px solid var(--rule); margin:0;}
+
+  /* ---------- Nav ---------- */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:50;
+    background:rgba(20,18,16,0.86);
+    backdrop-filter: blur(8px);
+    border-bottom:1px solid var(--rule);
+  }
+  nav.wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height:76px;
+  }
+  .brandmark{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:1.5rem;
+    letter-spacing:0.03em;
+    color:var(--ivory);
+  }
+  .brandmark em{ color:var(--gold-light); font-style:italic; }
+  .navlinks{ display:flex; gap:36px; }
+  .navlinks a{
+    font-size:0.95rem; color:var(--ivory-dim);
+    transition:color .25s ease;
+  }
+  .navlinks a:hover{ color:var(--gold-light); }
+  .navtoggle{ display:none; background:none; border:none; color:var(--ivory); font-size:1.6rem; cursor:pointer; }
+
+  @media (max-width:760px){
+    .navlinks{
+      position:absolute; top:76px; left:0; right:0;
+      background:var(--ink-2);
+      flex-direction:column; gap:0;
+      border-bottom:1px solid var(--rule);
+      max-height:0; overflow:hidden;
+      transition:max-height .35s ease;
+    }
+    .navlinks.open{ max-height:320px; }
+    .navlinks a{ padding:16px 32px; border-top:1px solid var(--rule); }
+    .navtoggle{ display:block; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    min-height:92vh;
+    display:flex; flex-direction:column; justify-content:center;
+    padding-top:120px; padding-bottom:80px;
+    position:relative;
+    background:
+      radial-gradient(ellipse 900px 500px at 82% 12%, rgba(180,135,75,0.16), transparent 60%),
+      var(--ink);
+  }
+  .hero .kicker{
+    color:var(--sand);
+    font-size:0.98rem;
+    max-width:420px;
+    margin-bottom:28px;
+  }
+  .hero h1{
+    font-size:clamp(3rem, 8vw, 6.4rem);
+    max-width:15ch;
+  }
+  .hero h1 .accent{
+    font-style:italic;
+    color:var(--gold-light);
+  }
+  .hero .lede{
+    margin-top:32px;
+    max-width:540px;
+    font-size:1.15rem;
+    color:var(--ivory-dim);
+  }
+  .hero .cta-row{
+    margin-top:44px;
+    display:flex; gap:20px; flex-wrap:wrap; align-items:center;
+  }
+  .btn{
+    display:inline-block;
+    padding:16px 34px;
+    border:1px solid var(--gold);
+    color:var(--ivory);
+    font-size:0.95rem;
+    transition:background .25s ease, color .25s ease;
+  }
+  .btn:hover{ background:var(--gold); color:var(--ink); }
+  .btn.ghost{ border-color:var(--rule); color:var(--ivory-dim); }
+  .btn.ghost:hover{ border-color:var(--gold-light); color:var(--gold-light); background:none; }
+
+  .verse{
+    margin-top:64px;
+    padding-top:28px;
+    border-top:1px solid var(--rule);
+    max-width:480px;
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:1.05rem;
+    color:var(--ivory-dim);
+  }
+  .verse span{ display:block; margin-top:8px; font-family:'Jost',sans-serif; font-style:normal; font-size:0.85rem; color:var(--sand); }
+
+  /* ---------- Section shell ---------- */
+  section{ padding:110px 0; }
+  .section-head{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    gap:40px; margin-bottom:64px; flex-wrap:wrap;
+  }
+  .section-head h2{ font-size:clamp(2.1rem, 4vw, 2.9rem); max-width:14ch; }
+  .section-head p{ max-width:360px; color:var(--ivory-dim); font-size:1.02rem; }
+
+  /* ---------- Story ---------- */
+  .story{ background:var(--ink-2); }
+  .story-grid{
+    display:grid; grid-template-columns: 1fr 1fr; gap:80px; align-items:start;
+  }
+  .story-grid h2{ font-size:clamp(2.3rem,5vw,3.4rem); max-width:11ch; }
+  .story-grid .body p{ color:var(--ivory-dim); margin-bottom:20px; font-size:1.05rem; }
+  .story-grid .body p:first-child{ color:var(--ivory); font-size:1.15rem; }
+  @media (max-width:820px){ .story-grid{ grid-template-columns:1fr; gap:40px; } }
+
+  /* ---------- Collections ---------- */
+  .collections-list{ display:flex; flex-direction:column; }
+  .collection-row{
+    display:grid; grid-template-columns: 1.1fr 1.4fr 0.9fr;
+    gap:40px;
+    padding:44px 0;
+    border-top:1px solid var(--rule);
+    align-items:start;
+  }
+  .collections-list .collection-row:last-child{ border-bottom:1px solid var(--rule); }
+  .collection-row .name{ font-size:clamp(1.6rem,3vw,2.1rem); }
+  .collection-row .name small{
+    display:block; font-family:'Jost',sans-serif; font-size:0.85rem;
+    color:var(--sand); margin-top:8px; font-style:normal; letter-spacing:0.02em;
+  }
+  .collection-row .desc{ color:var(--ivory-dim); font-size:1.02rem; max-width:52ch; }
+  .notes{ font-size:0.92rem; }
+  .notes .line{ display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px dashed var(--rule); color:var(--ivory-dim); }
+  .notes .line b{ color:var(--gold-light); font-weight:400; font-family:'Fraunces',serif; font-style:italic; }
+  @media (max-width:820px){ .collection-row{ grid-template-columns:1fr; gap:14px; } }
+
+  /* ---------- Craft ---------- */
+  .craft{ background:var(--ink-2); }
+  .craft-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:48px;
+  }
+  .craft-item .mark{
+    width:38px; height:38px; border:1px solid var(--gold);
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom:22px;
+    font-family:'Fraunces',serif; font-style:italic; color:var(--gold-light);
+  }
+  .craft-item h3{ font-size:1.3rem; margin-bottom:12px; font-weight:400; }
+  .craft-item p{ color:var(--ivory-dim); font-size:0.98rem; }
+  @media (max-width:820px){ .craft-grid{ grid-template-columns:1fr; gap:40px; } }
+
+  /* ---------- Bestsellers ---------- */
+  .bottles{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
+    background:var(--rule);
+    border:1px solid var(--rule);
+  }
+  .bottle{
+    background:var(--ink);
+    padding:36px 28px;
+    display:flex; flex-direction:column; gap:18px; min-height:340px;
+  }
+  .bottle .glass{
+    height:120px;
+    background:linear-gradient(160deg, rgba(180,135,75,0.22), rgba(91,31,36,0.18));
+    border:1px solid var(--rule);
+  }
+  .bottle h4{ font-size:1.25rem; font-weight:400; }
+  .bottle .type{ font-size:0.8rem; color:var(--sand); }
+  .bottle p{ font-size:0.92rem; color:var(--ivory-dim); flex-grow:1; }
+  .bottle .price{ font-family:'Fraunces',serif; font-style:italic; color:var(--gold-light); font-size:1.05rem; }
+  @media (max-width:900px){ .bottles{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:520px){ .bottles{ grid-template-columns:1fr; } }
+
+  /* ---------- Testimonials ---------- */
+  .quotes{ background:var(--ink-2); }
+  .quote-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:48px; }
+  .quote-card p{ font-family:'Fraunces',serif; font-style:italic; font-size:1.18rem; color:var(--ivory); margin-bottom:20px; }
+  .quote-card .who{ font-size:0.88rem; color:var(--sand); }
+  @media (max-width:820px){ .quote-grid{ grid-template-columns:1fr; gap:36px; } }
+
+  /* ---------- Newsletter / Contact ---------- */
+  .contact{
+    display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center;
+  }
+  .contact h2{ font-size:clamp(2.1rem,4vw,2.9rem); max-width:12ch; margin-bottom:20px; }
+  .contact p{ color:var(--ivory-dim); max-width:44ch; }
+  form{ display:flex; flex-direction:column; gap:18px; }
+  .field{ display:flex; flex-direction:column; gap:8px; }
+  .field label{ font-size:0.85rem; color:var(--sand); }
+  .field input, .field textarea{
+    background:transparent; border:none; border-bottom:1px solid var(--rule);
+    color:var(--ivory); font-family:'Jost',sans-serif; font-size:1rem;
+    padding:10px 2px; outline:none;
+  }
+  .field input:focus, .field textarea:focus{ border-color:var(--gold-light); }
+  form .btn{ align-self:flex-start; background:none; cursor:pointer; font-family:'Jost',sans-serif; margin-top:10px;}
+  @media (max-width:820px){ .contact{ grid-template-columns:1fr; gap:44px; } }
+
+  /* ---------- Footer ---------- */
+  footer{ padding:70px 0 40px; border-top:1px solid var(--rule); }
+  .footer-top{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:40px; margin-bottom:56px; }
+  .footer-brand .brandmark{ font-size:1.7rem; margin-bottom:14px; display:block; }
+  .footer-brand p{ color:var(--ivory-dim); max-width:34ch; font-size:0.95rem; }
+  .footer-cols{ display:flex; gap:72px; flex-wrap:wrap; }
+  .footer-col h5{ color:var(--gold-light); font-family:'Fraunces',serif; font-style:italic; font-weight:400; margin-bottom:16px; }
+  .footer-col a, .footer-col li{ display:block; color:var(--ivory-dim); font-size:0.92rem; margin-bottom:10px; list-style:none; }
+  .footer-col a:hover{ color:var(--gold-light); }
+  .footer-bottom{
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
+    padding-top:28px; border-top:1px solid var(--rule);
+    font-size:0.82rem; color:var(--sand);
+  }
+
+  ::selection{ background:var(--gold); color:var(--ink); }
+  @media (prefers-reduced-motion:reduce){ *{ scroll-behavior:auto !important; transition:none !important; } }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a class="brandmark" href="#top">Salsa<em>bil</em></a>
+    <div class="navlinks" id="navlinks">
+      <a href="#story">Our story</a>
+      <a href="#collections">Collections</a>
+      <a href="#craft">Craftsmanship</a>
+      <a href="#bestsellers">Bestsellers</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="navtoggle" id="navtoggle" aria-label="Toggle menu">&#9776;</button>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero wrap">
+    <p class="kicker">Oud &middot; Attar &middot; Bakhoor, hand-finished in small batches</p>
+    <h1>A spring named<br>in <span class="accent">Paradise</span>,<br>held in a bottle.</h1>
+    <p class="lede">Salsabil takes its name from the spring described in the Quran as flowing through Paradise. We build every oil, attar and bakhoor around that same idea of scent as something given, not manufactured &mdash; aged oud, hand-pressed florals, and resins sourced the way perfumers here have sourced them for generations.</p>
+    <div class="cta-row">
+      <a href="#collections" class="btn">Explore the collections</a>
+      <a href="#story" class="btn ghost">Read our story</a>
+    </div>
+    <div class="verse">
+      &ldquo;And they will be given to drink there a cup whose mixture is of ginger, from a spring within Paradise called Salsabil.&rdquo;
+      <span>Surah Al-Insan, 76:17&ndash;18</span>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- STORY -->
+  <section class="story" id="story">
+    <div class="wrap story-grid">
+      <h2>Perfume as it was made before it was an industry.</h2>
+      <div class="body">
+        <p>Salsabil began in a small mixing room, not a laboratory. Before it was a brand, it was a habit: buying raw oud from traders who'd aged it for years, macerating petals by hand, and testing a blend on skin for weeks before deciding it was finished.</p>
+        <p>We still work that way. Every Salsabil fragrance is composed as an attar or oil first &mdash; no alcohol, no shortcuts to speed up maturation. A batch can take anywhere from six weeks to eight months to reach the bottle, because oud resin and rose otto don't hurry for anyone.</p>
+        <p>We're a small house. We'd rather release four fragrances a year that we'd defend than forty that fill a catalogue. That's the trade we've made, and it's the one we intend to keep making.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLECTIONS -->
+  <section id="collections">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Three collections, three intentions</h2>
+        <p>Each line is built around one material and one mood, rather than a shared "house style" stretched across everything we make.</p>
+      </div>
+      <div class="collections-list">
+
+        <div class="collection-row">
+          <div class="name">Al-Oud<small>Smoked wood &amp; resin</small></div>
+          <div class="desc">Our founding line. Cambodian and Assamese oud, aged and distilled slowly, worn close to the skin rather than sprayed into a room. Built for people who want a scent that reads as depth, not projection.</div>
+          <div class="notes">
+            <div class="line"><span>Top</span><b>Saffron, black pepper</b></div>
+            <div class="line"><span>Heart</span><b>Aged Cambodian oud</b></div>
+            <div class="line"><span>Base</span><b>Labdanum, dry amber</b></div>
+          </div>
+        </div>
+
+        <div class="collection-row">
+          <div class="name">Ward<small>Garden florals as attar</small></div>
+          <div class="desc">Named after the Arabic word for rose. Sourced from Taif's harvest and pressed within a day of picking, then paired with jasmine sambac and a trace of green fig leaf so it never tips into sweetness.</div>
+          <div class="notes">
+            <div class="line"><span>Top</span><b>Green fig leaf</b></div>
+            <div class="line"><span>Heart</span><b>Taif rose, jasmine sambac</b></div>
+            <div class="line"><span>Base</span><b>White musk</b></div>
+          </div>
+        </div>
+
+        <div class="collection-row">
+          <div class="name">Dukhan<small>Musk, amber &amp; bakhoor smoke</small></div>
+          <div class="desc">The line for evenings and gatherings. Built around white musk and warmed resins, finished with a trace of bakhoor smoke &mdash; the scent that lingers on fabric in a majlis long after the guests have gone home.</div>
+          <div class="notes">
+            <div class="line"><span>Top</span><b>Cardamom, bakhoor smoke</b></div>
+            <div class="line"><span>Heart</span><b>White musk, amber</b></div>
+            <div class="line"><span>Base</span><b>Sandalwood, benzoin</b></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CRAFT -->
+  <section class="craft" id="craft">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What goes into a Salsabil bottle</h2>
+        <p>Nothing here is invented for the sake of a marketing page &mdash; it's how the fragrances are actually made.</p>
+      </div>
+      <div class="craft-grid">
+        <div class="craft-item">
+          <div class="mark">1</div>
+          <h3>Sourced, not synthesized</h3>
+          <p>Oud from aged agarwood, roses from Taif's spring harvest, saffron from Kashmir. Where a natural material exists, we use it; synthetics only fill gaps naturals genuinely can't.</p>
+        </div>
+        <div class="craft-item">
+          <div class="mark">2</div>
+          <h3>Aged, not rushed</h3>
+          <p>Attars are left to mature in glass, away from light, for weeks or months before we decide a blend is ready. Several of our fragrances took over a dozen revisions to reach the bottle.</p>
+        </div>
+        <div class="craft-item">
+          <div class="mark">3</div>
+          <h3>Bottled by hand</h3>
+          <p>Every bottle is filled, capped and labelled by hand in small batches, so a fragrance never sits half-finished on a shelf waiting for a production run.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BESTSELLERS -->
+  <section id="bestsellers">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What people come back for</h2>
+        <p>A starting point, if you're new to attars and oud oils rather than alcohol-based perfume.</p>
+      </div>
+      <div class="bottles">
+        <div class="bottle">
+          <div class="glass"></div>
+          <div>
+            <h4>Ainul Yaqeen</h4>
+            <div class="type">Pure oud oil &middot; Al-Oud</div>
+          </div>
+          <p>Our most concentrated oud, from resin aged eleven years before distillation. Two drops last a full day.</p>
+          <div class="price">3ml attar bottle</div>
+        </div>
+        <div class="bottle">
+          <div class="glass"></div>
+          <div>
+            <h4>Ward Al Taif</h4>
+            <div class="type">Rose attar &middot; Ward</div>
+          </div>
+          <p>The line's signature. Fresh-pressed Taif rose against jasmine sambac &mdash; soft, never powdery.</p>
+          <div class="price">6ml attar bottle</div>
+        </div>
+        <div class="bottle">
+          <div class="glass"></div>
+          <div>
+            <h4>Dukhan Al Malik</h4>
+            <div class="type">Musk &amp; bakhoor &middot; Dukhan</div>
+          </div>
+          <p>Warm and smoky, built for evenings. Our best-selling gift set fragrance three years running.</p>
+          <div class="price">6ml attar bottle</div>
+        </div>
+        <div class="bottle">
+          <div class="glass"></div>
+          <div>
+            <h4>Laylat Al Qadr</h4>
+            <div class="type">White musk &amp; amber &middot; Dukhan</div>
+          </div>
+          <p>Quiet and close to the skin. Named for the night it was first composed, during Ramadan.</p>
+          <div class="price">6ml attar bottle</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="quotes">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>From people who wear it</h2>
+      </div>
+      <div class="quote-grid">
+        <div class="quote-card">
+          <p>&ldquo;Ward Al Taif smells like the rose actually smelled when I picked it, not a perfume version of a rose.&rdquo;</p>
+          <div class="who">Amina, Sharjah</div>
+        </div>
+        <div class="quote-card">
+          <p>&ldquo;I've bought oud from a dozen houses. Ainul Yaqeen is the first one that didn't fade after two hours.&rdquo;</p>
+          <div class="who">Rashid, Dubai</div>
+        </div>
+        <div class="quote-card">
+          <p>&ldquo;Dukhan Al Malik is what my whole family wears for Eid now. It's become the smell of the house.&rdquo;</p>
+          <div class="who">Fatima, Abu Dhabi</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap contact">
+      <div>
+        <h2>Visit, order, or ask a question</h2>
+        <p>We ship across the UAE and India. For bulk or gifting orders, write to us directly and we'll put together a set.</p>
+        <p style="margin-top:24px;">hello@salsabilperfumes.com<br>+971 00 000 0000<br>Dubai, United Arab Emirates</p>
+      </div>
+      <form onsubmit="event.preventDefault();">
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" type="text" placeholder="Your name">
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="you@email.com">
+        </d
